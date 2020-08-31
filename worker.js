@@ -16,11 +16,21 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var storage = firebase.app().storage("gs://assistprodatabase.appspot.com");
+var storageRef = storage.ref();
 
-storage.ref().child("Dress.jpg").getDownloadURL().then(function(url) {
-    // `url` is the download URL for 'images/stars.jpg'
-  
-    // This can be downloaded directly:
+AddSection("Steph", "Steph.png", 1);
+AddSection("Steph2", "Dress.jpg", 1);
+AddSection("Steph", "Steph.png", 1);
+AddSection("Steph", "Steph.png", 1);
+AddSection("Steph", "Steph.png", 1);
+AddSection("Steph", "Steph.png", 1);
+AddSection("Steph", "Steph.png", 1);
+AddSection("Steph", "Steph.png", 1);
+
+
+function AddSection(name, thumbnail, count){
+
+  storageRef.child(thumbnail).getDownloadURL().then(function(url) {
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'blob';
     xhr.onload = function(event) {
@@ -29,10 +39,13 @@ storage.ref().child("Dress.jpg").getDownloadURL().then(function(url) {
     xhr.open('GET', url);
     xhr.send();
   
-    console.log(url);
     var div = document.getElementById("main_photos");
-    div.innerHTML += "<a class=\"gallery-item\" href=\"single.html\"> <img src=\""+ url +"\"> <span class=\"overlay\"> <h2>Nature</h2> <span>14 Photos</span> </span></a>";
+    div.innerHTML += "<a class=\"gallery-item\" href=\"single.html\"> <img src=\""+ url 
+                      +"\"> <span class=\"overlay\"> <h2>"
+                      + name + "</h2> <span>" + count 
+                      + " Photos</span> </span></a>";
 
   }).catch(function(error) {
     // Handle any errors
   });
+}
