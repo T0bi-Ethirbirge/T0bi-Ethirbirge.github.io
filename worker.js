@@ -1,6 +1,3 @@
-//var div = document.getElementById('fh5co-main').getElementById("main_photos");
-
-//div.innerHTML += "";
 
 // TODO: Replace the following with your app's Firebase project configuration
 // Your web app's Firebase configuration
@@ -32,9 +29,10 @@ storage.ref().child("Dress.jpg").getDownloadURL().then(function(url) {
     xhr.open('GET', url);
     xhr.send();
   
-    // Or inserted into an <img> element:
-    var img = document.getElementById('main_img');
-    img.src = url;
+    console.log(url);
+    var div = document.getElementById("main_photos");
+    div.innerHTML += "<a class=\"gallery-item\" href=\"single.html\"> <img src=\""+ url +"\"> <span class=\"overlay\"> <h2>Nature</h2> <span>14 Photos</span> </span></a>";
+
   }).catch(function(error) {
     // Handle any errors
   });
