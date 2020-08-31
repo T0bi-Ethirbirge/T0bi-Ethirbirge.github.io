@@ -90,12 +90,12 @@
 			</div>
 
 		</aside>
-
+		
 		<div id="fh5co-main">
-			<div class="fh5co-gallery">
+			<div id="main_photos" class="fh5co-gallery">
 
 				<a class="gallery-item" href="single.html">
-					<img src="images/work_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+					<img id="main_img" src="images/work_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 					<span class="overlay">
 						<h2>Nature</h2>
 						<span>14 Photos</span>
@@ -348,6 +348,24 @@
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
 
+
+	<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+	<script src="worker.js"></script>
+
 	</body>
 </html>
 
+<body>
+	
+  </body>
